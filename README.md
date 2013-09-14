@@ -1,7 +1,7 @@
 SMART
 =====
 
-SMART is an experimental semantic web application that automatically invoques multiple web services to answer the user's query.
+SMART is an experimental semantic web application that automatically invokes multiple web services to answer the user's query.
 
 There are only four services currently supported, two of which are test services in the "test-services" sub-project.
 
