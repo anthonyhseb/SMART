@@ -1,0 +1,12 @@
+SMART
+=====
+
+SMART is an experimental semantic web application that automatically invoques multiple web services to answer the user's query.
+
+There are only four services currently supported, two of which are test services in the "test-services" sub-project.
+
+
+To install SMART :
+  - go to the SMART folder and run the 'mvn package' command.
+  - deploy 'SMART/smart-web/targe/smart-web.<version>.war' to your favorite servlet container.
+  - [optional] deploy the test-services (hosted locally)
