@@ -1,0 +1,37 @@
+<root>
+	<item id="Book">
+	<content>
+		<name>Book</name>
+		</content>
+	</item>
+	<item id="title" parent_id="Book">
+		<content>
+			<name>Title</name>
+		</content>
+	</item>
+        <item id="writtenBy" parent_id="title">
+                <content>
+                        <name>Written by</name>
+                </content>
+        </item>
+        <item id="Author" parent_id="writtenBy">
+                <content>
+                        <name>Author</name>
+                </content>
+        </item>
+        <item id="firstName" parent_id="Author">
+                <content>
+                        <name>First Name</name>
+                </content>
+        </item>
+        <item id="lastName" parent_id="Author">
+                <content>
+                        <name>Last Name</name>
+                </content>
+        </item>
+        <item id="born" parent_id="Author">
+                <content>
+                        <name>Date of Birth</name>
+                </content>
+        </item>
+</root>

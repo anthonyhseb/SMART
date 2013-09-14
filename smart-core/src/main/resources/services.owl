@@ -1,0 +1,2069 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY swrl "http://www.w3.org/2003/11/swrl#" >
+    <!ENTITY swrlb "http://www.w3.org/2003/11/swrlb#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/anthony/services.owl#"
+     xml:base="http://www.semanticweb.org/anthony/services.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:swrl="http://www.w3.org/2003/11/swrl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:swrlb="http://www.w3.org/2003/11/swrlb#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/anthony/services.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#fromDataProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#fromDataProperty">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#VariableRestParameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#fromLogicalInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#fromLogicalInput">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#InputParameter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalInputParameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#subInputOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#fromLogicalOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#fromLogicalOutput">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalOutputParameter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#OutputParameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#subOutputOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#fromObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#fromObjectProperty">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalParameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#fromProvider -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#fromProvider">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>from provider</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#PhoneNumber"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#ServiceProvider"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#hasIORelation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#hasIORelation">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#InputOutputRelation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#hasPhoneNumber -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#hasPhoneNumber">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:label>has phone number</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#PhoneNumber"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#ownerOf"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#phoneNumberOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#hasRestInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#hasRestInput">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestInputParameter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#hasRestOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#hasRestOutput">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestOutputParameter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#hasRootInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#hasRootInput">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalInputParameter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#hasRootParameter"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#rootInputOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#hasRootOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#hasRootOutput">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalOutputParameter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#hasRootParameter"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#rootOutputOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#hasRootParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#hasRootParameter">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalParameter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#hasSignalStrengthMeasurement -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#hasSignalStrengthMeasurement">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:label>has signal strength</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#ServiceProvider"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#SignalStrengthMeasurement"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#located -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#located">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>located at</rdfs:label>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#Location"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Place"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#measurementValue -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#measurementValue">
+        <rdfs:label>measurement value</rdfs:label>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#GeoMeasurement"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#SignalStrengthMeasurement"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#named -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#named">
+        <rdfs:label>named</rdfs:label>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#Name"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#NamedThing"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#object -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#object">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#InputOutputRelation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalParameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#of">
+        <rdfs:label>of</rdfs:label>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#ownedBy"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#outputFormat -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#outputFormat">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#OutputFormat"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#ownedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#ownedBy">
+        <rdfs:label>owned by</rdfs:label>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainThing"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainThing"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#ownerOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#ownerOf">
+        <rdfs:label>owner of</rdfs:label>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainThing"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainThing"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#owns"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#owns -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#owns">
+        <rdfs:label>owns</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#phoneNumberOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#phoneNumberOf">
+        <rdfs:label>ownedBy</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#ownedBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#predicate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#predicate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#InputOutputRelation"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#providerOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#providerOf">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:label>provider of</rdfs:label>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#PhoneNumber"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#ServiceProvider"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#fromProvider"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#relatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#relatedTo">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label>Related To</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainThing"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainThing"/>
+        <owl:equivalentProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#similarTo"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#restInputOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#restInputOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestInputParameter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#hasRestInput"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#restOutputOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#restOutputOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestOutputParameter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#hasRestOutput"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#rootInputOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#rootInputOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#RootInputParameter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#rootParameterOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#rootOutputOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#rootOutputOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#RootOutputParameter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#rootParameterOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#rootParameterOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#rootParameterOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalParameter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#signalStrengthMeasurementOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#signalStrengthMeasurementOf">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>signal strength of</rdfs:label>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#ServiceProvider"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#SignalStrengthMeasurement"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#hasSignalStrengthMeasurement"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#similarTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#similarTo">
+        <rdf:type rdf:resource="&owl;SymmetricProperty"/>
+        <rdfs:label>similar to</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#subInputOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#subInputOf">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#InputParameter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalInputParameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#subParameterOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#subOutputOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#subOutputOf">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalOutputParameter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#OutputParameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#subParameterOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#subParameterOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#subParameterOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalParameter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Parameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#subject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#subject">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#InputOutputRelation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalParameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#toInput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#toInput">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#InputParameter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalInputParameter"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#fromLogicalInput"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#toOutput -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#toOutput">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalOutputParameter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#OutputParameter"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#fromLogicalOutput"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#toRestParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#toRestParameter">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainDataProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#VariableRestParameter"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#fromDataProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#topDomainObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#topDomainObjectProperty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#type -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#type">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainClass"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalParameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceObjectProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#endpoint -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#endpoint">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#fullName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#fullName">
+        <rdfs:label>full name</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Person"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#latitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#latitude">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>latitude</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#longitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#longitude">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>longitude</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Location"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#mandatory -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#mandatory">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestInputParameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#measurementLatitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#measurementLatitude">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>latitude</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#GeoMeasurement"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#measurementLongitude -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#measurementLongitude">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>longitude</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#GeoMeasurement"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#msisdn -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#msisdn">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>MSISDN</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#PhoneNumber"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#name">
+        <rdfs:label>name</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Name"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#parameterName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#parameterName">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestInputParameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#parameterValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#parameterValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#StaticRestInputParameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#providerName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#providerName">
+        <rdfs:label>name
+</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#ServiceProvider"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#restOutputXPath -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#restOutputXPath">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestOutputParameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#resultXPath -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#resultXPath">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:comment rdf:datatype="&xsd;string">XPath of result nodes. Set to root node of response if document has only a single result. When the output is a list, use XPath of result nodes.
+
+The path to a RestOutput&apos;s value would be:
+ResultXPath / RootOutputXPath / RestOutputXPath</rdfs:comment>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#rootOutputXPath -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#rootOutputXPath">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#RootOutputParameter"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topServiceDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#timestamp -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#timestamp">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>timestamp</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#GeoMeasurement"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#topDomainDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#topDomainDataProperty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#topServiceDataProperty -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#topServiceDataProperty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#unit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#unit">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>unit</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#GeoMeasurement"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#value -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/anthony/services.owl#value">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:label>value</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/anthony/services.owl#GeoMeasurement"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#topDomainDataProperty"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#DomainClass -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#DomainClass">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#ServiceThing"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#DomainDataProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#DomainDataProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainProperty"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainObjectProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#DomainObjectProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#DomainObjectProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainProperty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#DomainProperty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#DomainProperty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#ServiceThing"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#DomainThing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#DomainThing"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GeoMeasurement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#GeoMeasurement">
+        <rdfs:label>geo-measurement</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#InputOutputRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#InputOutputRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#ServiceThing"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/anthony/services.owl#Parameter"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#InputParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#InputParameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#Parameter"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/anthony/services.owl#OutputParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#InputToOutputRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#InputToOutputRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#InputOutputRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#Location -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#Location">
+        <rdfs:label>location</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#LogicalInputParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#LogicalInputParameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#InputParameter"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalParameter"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestInputParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#LogicalOutputParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#LogicalOutputParameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalParameter"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#OutputParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#LogicalParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#LogicalParameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#Parameter"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#Name -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#Name">
+        <rdfs:label>name</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#NamedThing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#NamedThing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#OutputFormat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#OutputFormat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#ServiceThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#OutputParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#OutputParameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#OutputToInputRelation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#OutputToInputRelation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#InputOutputRelation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#Parameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#Parameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#ServiceThing"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#Person">
+        <rdfs:label>person</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#PhoneNumber -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#PhoneNumber">
+        <rdfs:label>phone number</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#Place -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#Place">
+        <rdfs:label>place</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#NamedThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#RestInputParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#RestInputParameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#InputParameter"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#RestOutputParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#RestOutputParameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#OutputParameter"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#RestParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#RestParameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#Parameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#RootInputParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#RootInputParameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalInputParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#RootOutputParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#RootOutputParameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalOutputParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#SISOService -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#SISOService">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/anthony/services.owl#Service"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#hasRootInput"/>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/anthony/services.owl#Parameter"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#hasRootOutput"/>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/anthony/services.owl#Parameter"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#Service -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#Service">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#ServiceThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#ServiceProvider -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#ServiceProvider">
+        <rdfs:label>Service Provider</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#ServiceThing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#ServiceThing"/>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#SignalStrengthMeasurement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#SignalStrengthMeasurement">
+        <rdfs:label>signal strength measurement</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainThing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#StaticRestInputParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#StaticRestInputParameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestInputParameter"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/anthony/services.owl#VariableRestInputParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#SubInputParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#SubInputParameter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/anthony/services.owl#LogicalInputParameter"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#fromLogicalInput"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalInputParameter"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalInputParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#SubOutputParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#SubOutputParameter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/anthony/services.owl#LogicalOutputParameter"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#fromLogicalOutput"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalOutputParameter"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalOutputParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#VariableRestInputParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#VariableRestInputParameter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestInputParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#VariableRestParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/anthony/services.owl#VariableRestParameter">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/anthony/services.owl#RestParameter"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#StaticRestInputParameter"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestParameter"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GNS_IORel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GNS_IORel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#OutputToInputRelation"/>
+        <object rdf:resource="http://www.semanticweb.org/anthony/services.owl#GNS_Place_RLI"/>
+        <subject rdf:resource="http://www.semanticweb.org/anthony/services.owl#GNS_Place_RLO"/>
+        <predicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#relatedTo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GNS_Location_LO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GNS_Location_LO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalOutputParameter"/>
+        <fromLogicalOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GNS_Place_RLO"/>
+        <type rdf:resource="http://www.semanticweb.org/anthony/services.owl#Location"/>
+        <fromObjectProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#located"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GNS_Name_LI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GNS_Name_LI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalInputParameter"/>
+        <fromLogicalInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GNS_Place_RLI"/>
+        <type rdf:resource="http://www.semanticweb.org/anthony/services.owl#Name"/>
+        <fromObjectProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#named"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GNS_Name_LO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GNS_Name_LO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalOutputParameter"/>
+        <fromLogicalOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GNS_Place_RLO"/>
+        <type rdf:resource="http://www.semanticweb.org/anthony/services.owl#Name"/>
+        <fromObjectProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#named"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GNS_Place_RLI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GNS_Place_RLI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RootInputParameter"/>
+        <type rdf:resource="http://www.semanticweb.org/anthony/services.owl#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GNS_Place_RLO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GNS_Place_RLO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RootOutputParameter"/>
+        <rootOutputXPath rdf:datatype="&xsd;string">.</rootOutputXPath>
+        <type rdf:resource="http://www.semanticweb.org/anthony/services.owl#Place"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GNS_QueryString_RI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GNS_QueryString_RI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#VariableRestInputParameter"/>
+        <parameterName rdf:datatype="&xsd;string">q</parameterName>
+        <fromLogicalInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GNS_Name_LI"/>
+        <restInputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#GeoNamesSearch"/>
+        <fromDataProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GNS_ToponymName_RO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GNS_ToponymName_RO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestOutputParameter"/>
+        <restOutputXPath rdf:datatype="&xsd;string">toponymName</restOutputXPath>
+        <fromLogicalOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GNS_Name_LO"/>
+        <restOutputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#GeoNamesSearch"/>
+        <fromDataProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#name"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GNS_Username_SI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GNS_Username_SI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#StaticRestInputParameter"/>
+        <parameterValue rdf:datatype="&xsd;string">anthonyhseb</parameterValue>
+        <parameterName rdf:datatype="&xsd;string">username</parameterName>
+        <restInputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#GeoNamesSearch"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GNS_lat_RO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GNS_lat_RO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestOutputParameter"/>
+        <restOutputXPath rdf:datatype="&xsd;string">lat</restOutputXPath>
+        <fromLogicalOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GNS_Location_LO"/>
+        <restOutputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#GeoNamesSearch"/>
+        <fromDataProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#latitude"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GNS_lng_RO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GNS_lng_RO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestOutputParameter"/>
+        <restOutputXPath rdf:datatype="&xsd;string">lng</restOutputXPath>
+        <fromLogicalOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GNS_Location_LO"/>
+        <restOutputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#GeoNamesSearch"/>
+        <fromDataProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#longitude"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GO_IORel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GO_IORel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#InputOutputRelation"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#OutputToInputRelation"/>
+        <subject rdf:resource="http://www.semanticweb.org/anthony/services.owl#GO_Operator_RLO"/>
+        <object rdf:resource="http://www.semanticweb.org/anthony/services.owl#GO_PhoneNumber_RLI"/>
+        <predicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#providerOf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GO_Operator_RLO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GO_Operator_RLO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RootOutputParameter"/>
+        <rootOutputXPath rdf:datatype="&xsd;string">Operator</rootOutputXPath>
+        <toOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GO_name_RO"/>
+        <rootOutputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#GetOperatorService"/>
+        <type rdf:resource="http://www.semanticweb.org/anthony/services.owl#ServiceProvider"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GO_PhoneNumber_RLI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GO_PhoneNumber_RLI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RootInputParameter"/>
+        <toInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GO_number_RI"/>
+        <rootInputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#GetOperatorService"/>
+        <type rdf:resource="http://www.semanticweb.org/anthony/services.owl#PhoneNumber"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GO_name_RO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GO_name_RO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestOutputParameter"/>
+        <restOutputXPath rdf:datatype="&xsd;string">.</restOutputXPath>
+        <fromLogicalOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GO_Operator_RLO"/>
+        <restOutputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#GetOperatorService"/>
+        <fromDataProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#providerName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GO_number_RI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GO_number_RI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#VariableRestInputParameter"/>
+        <parameterName rdf:datatype="&xsd;string">n</parameterName>
+        <fromLogicalInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GO_PhoneNumber_RLI"/>
+        <restInputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#GetOperatorService"/>
+        <fromDataProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#msisdn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GeoMeasurement -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GeoMeasurement">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainClass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GeoNamesSearch -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GeoNamesSearch">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#SISOService"/>
+        <rdfs:label rdf:datatype="&xsd;string">GeoNames.org Search Service</rdfs:label>
+        <resultXPath rdf:datatype="&xsd;string">/geonames/geoname</resultXPath>
+        <rdfs:comment rdf:datatype="&xsd;string">Find locations by name.</rdfs:comment>
+        <endpoint rdf:datatype="&xsd;anyURI">http://api.geonames.org/search</endpoint>
+        <hasRestInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GNS_QueryString_RI"/>
+        <hasRestOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GNS_ToponymName_RO"/>
+        <hasRestInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GNS_Username_SI"/>
+        <hasRestOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GNS_lat_RO"/>
+        <hasRestOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GNS_lng_RO"/>
+        <outputFormat rdf:resource="http://www.semanticweb.org/anthony/services.owl#XML"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#GetOperatorService -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#GetOperatorService">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#SISOService"/>
+        <resultXPath rdf:datatype="&xsd;string">/root</resultXPath>
+        <endpoint rdf:datatype="&xsd;anyURI">http://localhost:8080/getOperator/getOperator</endpoint>
+        <hasIORelation rdf:resource="http://www.semanticweb.org/anthony/services.owl#GO_IORel"/>
+        <hasRootOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GO_Operator_RLO"/>
+        <hasRootInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GO_PhoneNumber_RLI"/>
+        <hasRestOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GO_name_RO"/>
+        <hasRestInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#GO_number_RI"/>
+        <outputFormat rdf:resource="http://www.semanticweb.org/anthony/services.owl#XML"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#JSON -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#JSON">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#OutputFormat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#Location -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#Location">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainClass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#Name -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#Name">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainClass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#Person -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#Person">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainClass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#PhoneNumber -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#PhoneNumber">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainClass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#Place -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#Place">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainClass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#SM_IORel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#SM_IORel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#InputOutputRelation"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#OutputToInputRelation"/>
+        <object rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_operator_RLI"/>
+        <subject rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_signalmesurement_RLO"/>
+        <predicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#signalStrengthMeasurementOf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#SM_geomeasurement_LO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#SM_geomeasurement_LO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#LogicalOutputParameter"/>
+        <type rdf:resource="http://www.semanticweb.org/anthony/services.owl#GeoMeasurement"/>
+        <toOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_latitude_RO"/>
+        <toOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_longitude_RO"/>
+        <fromLogicalOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_signalmesurement_RLO"/>
+        <toOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_unit_RO"/>
+        <toOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_value_RO"/>
+        <fromObjectProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#measurementValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#SM_latitude_RO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#SM_latitude_RO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestOutputParameter"/>
+        <restOutputXPath rdf:datatype="&xsd;string">longitude</restOutputXPath>
+        <fromLogicalOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_geomeasurement_LO"/>
+        <restOutputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#SignalMeasurementsService"/>
+        <fromDataProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#measurementLatitude"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#SM_longitude_RO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#SM_longitude_RO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestOutputParameter"/>
+        <restOutputXPath rdf:datatype="&xsd;string">longitude</restOutputXPath>
+        <fromLogicalOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_geomeasurement_LO"/>
+        <restOutputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#SignalMeasurementsService"/>
+        <fromDataProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#measurementLongitude"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#SM_operator_RLI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#SM_operator_RLI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RootInputParameter"/>
+        <toInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_opname_RI"/>
+        <type rdf:resource="http://www.semanticweb.org/anthony/services.owl#ServiceProvider"/>
+        <rootInputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#SignalMeasurementsService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#SM_opname_RI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#SM_opname_RI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#VariableRestInputParameter"/>
+        <parameterName rdf:datatype="&xsd;string">i</parameterName>
+        <fromLogicalInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_operator_RLI"/>
+        <restInputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#SignalMeasurementsService"/>
+        <fromDataProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#providerName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#SM_signalmesurement_RLO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#SM_signalmesurement_RLO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RootOutputParameter"/>
+        <rootOutputXPath rdf:datatype="&xsd;string">.</rootOutputXPath>
+        <toOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_geomeasurement_LO"/>
+        <rootOutputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#SignalMeasurementsService"/>
+        <type rdf:resource="http://www.semanticweb.org/anthony/services.owl#SignalStrengthMeasurement"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#SM_unit_RO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#SM_unit_RO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestOutputParameter"/>
+        <restOutputXPath rdf:datatype="&xsd;string">unit</restOutputXPath>
+        <fromLogicalOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_geomeasurement_LO"/>
+        <restOutputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#SignalMeasurementsService"/>
+        <fromDataProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#SM_value_RO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#SM_value_RO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestOutputParameter"/>
+        <restOutputXPath rdf:datatype="&xsd;string">value</restOutputXPath>
+        <fromLogicalOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_geomeasurement_LO"/>
+        <restOutputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#SignalMeasurementsService"/>
+        <fromDataProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#value"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#ServiceProvider -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#ServiceProvider">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainClass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#SignalMeasurementsService -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#SignalMeasurementsService">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#SISOService"/>
+        <resultXPath rdf:datatype="&xsd;string">/root/GeoMeasurement</resultXPath>
+        <endpoint rdf:datatype="&xsd;anyURI">http://localhost:8080/mesureCSV/NewServlet</endpoint>
+        <hasIORelation rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_IORel"/>
+        <hasRestOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_latitude_RO"/>
+        <hasRestOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_longitude_RO"/>
+        <hasRestInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_opname_RI"/>
+        <hasRestOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_unit_RO"/>
+        <hasRestOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#SM_value_RO"/>
+        <outputFormat rdf:resource="http://www.semanticweb.org/anthony/services.owl#XML"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#SignalStrengthMeasurement -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#SignalStrengthMeasurement">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainClass"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#TCRL_APIKey_SI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#TCRL_APIKey_SI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#StaticRestInputParameter"/>
+        <parameterValue rdf:datatype="&xsd;string">82ed311f372c6b41e96b0cf3ca78d934</parameterValue>
+        <parameterName rdf:datatype="&xsd;string">userKey</parameterName>
+        <restInputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#TrueCallerReverseLookup"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#TCRL_IORel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#TCRL_IORel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#InputOutputRelation"/>
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#OutputToInputRelation"/>
+        <subject rdf:resource="http://www.semanticweb.org/anthony/services.owl#TCRL_Person_RLO"/>
+        <object rdf:resource="http://www.semanticweb.org/anthony/services.owl#TCRL_PhoneNumber_RLI"/>
+        <predicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#ownerOf"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#TCRL_Person_RLO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#TCRL_Person_RLO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RootOutputParameter"/>
+        <rootOutputXPath rdf:datatype="&xsd;string">.</rootOutputXPath>
+        <type rdf:resource="http://www.semanticweb.org/anthony/services.owl#Person"/>
+        <toOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#TCRL_name_RO"/>
+        <rootOutputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#TrueCallerReverseLookup"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#TCRL_PhoneNumber_RLI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#TCRL_PhoneNumber_RLI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RootInputParameter"/>
+        <type rdf:resource="http://www.semanticweb.org/anthony/services.owl#PhoneNumber"/>
+        <toInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#TCRL_phone_RI"/>
+        <rootInputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#TrueCallerReverseLookup"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#TCRL_name_RO -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#TCRL_name_RO">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#RestOutputParameter"/>
+        <restOutputXPath rdf:datatype="&xsd;string">name</restOutputXPath>
+        <fromLogicalOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#TCRL_Person_RLO"/>
+        <restOutputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#TrueCallerReverseLookup"/>
+        <fromDataProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#fullName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#TCRL_phone_RI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#TCRL_phone_RI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#VariableRestInputParameter"/>
+        <parameterName rdf:datatype="&xsd;string">phone</parameterName>
+        <fromLogicalInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#TCRL_PhoneNumber_RLI"/>
+        <restInputOf rdf:resource="http://www.semanticweb.org/anthony/services.owl#TrueCallerReverseLookup"/>
+        <fromDataProperty rdf:resource="http://www.semanticweb.org/anthony/services.owl#msisdn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#TrueCallerReverseLookup -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#TrueCallerReverseLookup">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#SISOService"/>
+        <resultXPath rdf:datatype="&xsd;string">/root</resultXPath>
+        <endpoint rdf:datatype="&xsd;anyURI">https://api.truecaller.com/v1.0/search.json</endpoint>
+        <outputFormat rdf:resource="http://www.semanticweb.org/anthony/services.owl#JSON"/>
+        <hasRestInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#TCRL_APIKey_SI"/>
+        <hasIORelation rdf:resource="http://www.semanticweb.org/anthony/services.owl#TCRL_IORel"/>
+        <hasRootOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#TCRL_Person_RLO"/>
+        <hasRootInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#TCRL_PhoneNumber_RLI"/>
+        <hasRestOutput rdf:resource="http://www.semanticweb.org/anthony/services.owl#TCRL_name_RO"/>
+        <hasRestInput rdf:resource="http://www.semanticweb.org/anthony/services.owl#TCRL_phone_RI"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#XML -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#XML">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#OutputFormat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#fullName -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#fullName">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainDataProperty"/>
+        <rdfs:label>full name</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#hasPhoneNumber -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#hasPhoneNumber">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainObjectProperty"/>
+        <rdfs:label>has phone number</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#latitude -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#latitude">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainDataProperty"/>
+        <rdfs:label>latitude</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#located -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#located">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainObjectProperty"/>
+        <rdfs:label>located at</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#longitude -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#longitude">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainDataProperty"/>
+        <rdfs:label>longitude</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#measurementLatitude -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#measurementLatitude">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainDataProperty"/>
+        <rdfs:label>latitude</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#measurementLongitude -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#measurementLongitude">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainDataProperty"/>
+        <rdfs:label>longitude</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#measurementValue -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#measurementValue">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainObjectProperty"/>
+        <rdfs:label>measurement value</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#msisdn -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#msisdn">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainDataProperty"/>
+        <rdfs:label>MSISDN</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#name -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#name">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainDataProperty"/>
+        <rdfs:label>name</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#named -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#named">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainObjectProperty"/>
+        <rdfs:label>named</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#ownerOf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#ownerOf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainObjectProperty"/>
+        <rdfs:label>owner of</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#phoneNumberOf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#phoneNumberOf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainObjectProperty"/>
+        <rdfs:label>ownedBy</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#providerName -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#providerName">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainDataProperty"/>
+        <rdfs:label>name
+</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#providerOf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#providerOf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainObjectProperty"/>
+        <rdfs:label>provider of</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#relatedTo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#relatedTo">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainObjectProperty"/>
+        <rdfs:label>Related To</rdfs:label>
+        <owl:sameAs rdf:resource="http://www.semanticweb.org/anthony/services.owl#similarTo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#signalStrengthMeasurementOf -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#signalStrengthMeasurementOf">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainObjectProperty"/>
+        <rdfs:label>signal strength of</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#similarTo -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#similarTo">
+        <rdfs:label>similar to</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#unit -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#unit">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainDataProperty"/>
+        <rdfs:label>unit</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/anthony/services.owl#value -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/anthony/services.owl#value">
+        <rdf:type rdf:resource="http://www.semanticweb.org/anthony/services.owl#DomainDataProperty"/>
+        <rdfs:label>value</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Rules
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="urn:swrl#rootInput">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#service">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#restInput">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#rootOutput">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#restOutput">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#rparam">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#rel">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl#sparam">
+        <rdf:type rdf:resource="&swrl;Variable"/>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#rootInputOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#rootInput"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#service"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#hasRestInput"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#restInput"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#service"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#subInputOf"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#restInput"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#rootInput"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#RootInputParameter"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#rootInput"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#hasIORelation"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#rel"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#service"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#rootParameterOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#rparam"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#service"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#subject"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#rel"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#sparam"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#subParameterOf"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#rparam"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#sparam"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:rest rdf:resource="&rdf;nil"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#subject"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#rel"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#rparam"/>
+                            </rdf:Description>
+                        </rdf:first>
+                    </rdf:Description>
+                </rdf:rest>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#rootParameterOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#rparam"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#service"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#hasIORelation"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#rel"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#service"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&swrl;Imp"/>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:rest rdf:resource="&rdf;nil"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#rootOutputOf"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#rootOutput"/>
+                        <swrl:argument2 rdf:resource="urn:swrl#service"/>
+                    </rdf:Description>
+                </rdf:first>
+            </rdf:Description>
+        </swrl:head>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="&swrl;AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;ClassAtom"/>
+                        <swrl:classPredicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#RootOutputParameter"/>
+                        <swrl:argument1 rdf:resource="urn:swrl#rootOutput"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="&swrl;AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#hasRestOutput"/>
+                                <swrl:argument2 rdf:resource="urn:swrl#restOutput"/>
+                                <swrl:argument1 rdf:resource="urn:swrl#service"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="&swrl;AtomList"/>
+                                <rdf:rest rdf:resource="&rdf;nil"/>
+                                <rdf:first>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="&swrl;IndividualPropertyAtom"/>
+                                        <swrl:propertyPredicate rdf:resource="http://www.semanticweb.org/anthony/services.owl#subOutputOf"/>
+                                        <swrl:argument1 rdf:resource="urn:swrl#restOutput"/>
+                                        <swrl:argument2 rdf:resource="urn:swrl#rootOutput"/>
+                                    </rdf:Description>
+                                </rdf:first>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

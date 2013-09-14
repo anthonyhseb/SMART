@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
+        <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/markermanager/src/markermanager.js"></script>
+        <script type="text/javascript" src="_lib/Map.js"></script>
+        <script type="text/javascript" src="_lib/jquery.js"></script>
+        <script type="text/javascript" src="_lib/jquery.cookie.js"></script>
+        <script type="text/javascript" src="_lib/jquery.hotkeys.js"></script>
+        <script type="text/javascript" src="jquery.jstree.js"></script>
+        <script type="text/javascript" src="_docs/syntax/!script.js"></script>
+        <link type="text/css" rel="stylesheet" href="_docs/syntax/!style.css"/>
+        <link type="text/css" rel="stylesheet" href="_docs/!style.css"/>
+        <style type="text/css">
+            html { height: 100% }
+            body { height: 100%; margin: 0; padding: 0 }
+        </style>
+
+    </head>
+    <body>
+        <h1> Results </h1>
+        <script type="text/javascript" class="source">
+            $(window).load(function(){
+                initMap();
+            });
+            
+            $(function () {
+                $("#demo2").jstree({ 
+                    "themes" : {
+                        "theme" : "default",
+                        "dots" : false,
+                        "icons" : false
+                    },
+                    "xml_data" : { "ajax" : {
+                            "url" : "GetResults"
+                        },
+                        "xsl" : "flat"
+                    },
+                    "plugins" : [ "themes", "xml_data" ]
+                });
+            });
+        </script>
+        <div id="demo2" class="demo" style="float: left;"></div>
+        <div id="fooBar" style="float: right;"></div>
+        <div id="map-canvas" style="width: 60%; height: 100%; float: right;"></div>
+<!--        <input type="button"-->
+    </body>
+</html>
