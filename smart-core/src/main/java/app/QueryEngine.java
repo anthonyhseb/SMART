@@ -79,7 +79,7 @@ public class QueryEngine {
 				"service",
 				ObjectProperties.hasRootOutput.get(),
 				"rootOutput").
-		addWhereTriple(
+		/*addWhereTriple(
 				"rootInput",
 				ObjectProperties.type.get(),
 				"rootInputClass").
@@ -96,7 +96,7 @@ public class QueryEngine {
 				"rootOutputClass",
 				Ontology.getModel().getProperty(Ontology.rdfsNS + "subClassOf"),
 				_outputType
-				).
+				).*/
 		addWhereTriple(
 				property,	//switched
 				Ontology.getModel().getProperty(Ontology.rdfsNS + "subPropertyOf"),
@@ -152,7 +152,7 @@ public class QueryEngine {
 				"service",
 				ObjectProperties.hasRootOutput.get(),
 				"rootOutput").
-		addWhereTriple(
+		/*addWhereTriple(
 				"rootInput",
 				ObjectProperties.type.get(),
 				"rootInputClass").
@@ -169,7 +169,7 @@ public class QueryEngine {
 				"rootOutputClass",
 				Ontology.getModel().getProperty(Ontology.rdfsNS + "subClassOf"),
 				_outputType
-				).
+				).*/
 		addWhereTriple(
 				property,//switched
 				Ontology.getModel().getProperty(Ontology.rdfsNS + "subPropertyOf"),
