@@ -8,5 +8,9 @@ There are only four services currently supported, two of which are test services
 
 To install SMART :
   - go to the SMART folder and run the 'mvn package' command.
-  - deploy 'SMART/smart-web/target/smart-web.${version}.war' to your favorite servlet container.
+  - deploy 'SMART/smart-web/target/smart-web.<version>.war' to your favorite servlet container.
   - [optional] deploy the test-services (hosted locally)
+
+Requirements:
+  - Apache Maven (preferably a recent version)
+  - Java 1.7
