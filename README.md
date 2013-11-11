@@ -14,3 +14,5 @@ To install SMART :
 Requirements:
   - Apache Maven (preferably a recent version)
   - Java 1.7
+
+Some documentation ca be found [here] (http://airccse.org/journal/ijwest/papers/4413ijwest06.pdf).
